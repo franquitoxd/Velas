@@ -5,69 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shaddai</title>
-    <link rel="stylesheet" href="css/styles.css">
     <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
-    <link rel="icon" href="icono.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="icon/logo.ico">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <div class="overlay">
-        <div class="alert-box">
+    <!-- Alerta de bienvenida -->
+    <div class="overlay"><div class="alert-box">
             <h2>Bienvenid@s</h2>
             <p>¡Gracias por visitarnos!</p>
             <p>Esto es Shaddai</p>
-            <button class="close-btn" onclick="closeAlert()">Cerrar</button>
-        </div>
+            <button class="close-btn" onclick="closeAlert()">Cerrar</button></div>
     </div>
-
 
     <h1 class="shaddai">Shaddai</h1>
 
-    
-<div class="productos">
-    <div class="producto">
-        <img src="img/producto 1.jpg"
-            onclick="abrirModal('img/producto 1.jpg')">
-        <h3>Producto 1</h3>
-        <p class="precio">$100</p>
-        <button class="btn-comprar" onclick="comprarPorWhatsApp('Producto 1', 100)">Comprar por WhatsApp</button>
+    <div class="productos">
+        <div class="producto">
+            <div class="imagen-con-texto" onclick="abrirModal('img/producto 1.jpg')">
+                <img src="img/producto 1.jpg" alt="Producto 1">
+                <div class="texto-superpuesto">Escultura de mujer vendada, bandeja arcoiris, vela aromática de limón dulce y Home spray textil</div>
+            </div>
+            <h3>Producto 1</h3>
+            <p class="precio">$9800</p>
+            <button class="btn-comprar" onclick="comprarPorWhatsApp('Producto 1', 9800)">Comprar por WhatsApp</button>
+        </div>
+        
+
+
+        <div class="producto">
+            <div class="imagen-con-texto" onclick="abrirModal('img/producto 2.jpg')">
+                <img src="img/producto 2.jpg" alt="Producto 1">
+                <div class="texto-superpuesto">Florero nórdico con flores secas, vela aromática de coco y vainilla, bandeja ovalada, difusor con varillas y
+                varilla con flor</div>
+            </div>
+            <h3>Producto 2</h3>
+            <p class="precio">$10200</p>
+            <button class="btn-comprar" onclick="comprarPorWhatsApp('Producto 2', 10200)">Comprar por WhatsApp</button>
+        </div>
+
+
+
+        <div class="producto">
+            <div class="imagen-con-texto" onclick="abrirModal('img/producto 3.jpg')">
+                <img src="img/producto 3.jpg" alt="Producto 2">
+                <div class="texto-superpuesto">Escultura de niña con flores (se pueden sacar esas flores y usarlo de alajero, ponerle una vela o una planta) vela
+                aromática de suculenta, bandeja ovalada, difusor con varillas y flor</div>
+            </div>
+            <h3>Producto 3</h3>
+            <p class="precio">$10300</p>
+            <button class="btn-comprar" onclick="comprarPorWhatsApp('Producto 3', 10300)">Comprar por WhatsApp</button>
+        </div>
     </div>
 
-    <div class="producto">
-        <img src="img/producto 2.jpg"
-            onclick="abrirModal('img/producto 2.jpg')">
-        <h3>Producto 2</h3>
-        <p class="precio">$150</p>
-        <button class="btn-comprar" onclick="comprarPorWhatsApp('Producto 2', 150)">Comprar por WhatsApp</button>
-    </div>
-
-    <div class="producto">
-        <img src="img/producto 3.jpg"
-            onclick="abrirModal('img/producto 3.jpg')">
-        <h3>Producto 3</h3>
-        <p class="precio">$150</p>
-        <button class="btn-comprar" onclick="comprarPorWhatsApp('Producto 2', 150)">Comprar por WhatsApp</button>
-    </div>
-</div>
-
-
-<div class="productos">
-    <div class="producto">
-        <img src="img/producto 4.jpg"
-            onclick="abrirModal('img/producto 4.jpg')">
-        <h3>Producto 4</h3>
-        <p class="precio">$100</p>
-        <button class="btn-comprar" onclick="comprarPorWhatsApp('Producto 1', 100)">Comprar por WhatsApp</button>
-    </div>
-</div>
-
-    
-
-    <!-- Modal para imagen ampliada -->
-    <div class="modal" id="modal">
-        <span class="close" onclick="cerrarModal()">&times;</span>
+    <!-- Modal -->
+    <div class="modal" id="modal" onclick="cerrarModal(event)">
         <img id="imagenAmpliada" src="" alt="Imagen Ampliada">
     </div>
+
+    <br>
+    <br>
+
+    <footer>
+        <h3>Sobre Nosotros</h3>
+        <p>
+            <a href="https://www.instagram.com/shaddaiaromas.r" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </p>
+        <p>&copy; 2024 Shaddai Aromas</p>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>

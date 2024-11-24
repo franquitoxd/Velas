@@ -1,44 +1,48 @@
-function abrirModal(imagenSrc) {
-    const modal = document.getElementById('modal');
-    const imagenAmpliada = document.getElementById('imagenAmpliada');
-    
-    imagenAmpliada.src = imagenSrc;
-    modal.style.display = 'flex';
-}
+function closeAlert() {
+            const overlay = document.querySelector('.overlay');
+            const alertBox = document.querySelector('.alert-box');
 
-function cerrarModal(event) {
-    const modal = document.getElementById('modal');
-    
-    // Cierra el modal solo si el clic ocurre fuera de la imagen
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
-}
+            // Agregar clases para ocultar con transición
+            alertBox.classList.add('hidden');
+            overlay.classList.add('hidden');
 
-// Asocia el evento de clic al modal completo
-document.getElementById('modal').addEventListener('click', cerrarModal);
-
-function comprarPorWhatsApp(producto, precio) {
-    const numeroWhatsApp = '541165661343'; // Reemplaza este número con tu número de WhatsApp
-    const mensaje = `Hola! Me interesa comprar ${producto} por $${precio}`;
-    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-    window.open(urlWhatsApp, '_blank');
-}
-
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
-
-
-// Función para mostrar la alerta
-        function showAlert() {
-            document.querySelector('.overlay').style.display = 'flex';
-        }
-
-        // Función para cerrar la alerta
-        function closeAlert() {
-            document.querySelector('.overlay').style.display = 'none';
+            // Retirar completamente del DOM tras la transición
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 300);
         }
 
         // Mostrar la alerta al cargar la página
-        window.onload = showAlert;
+        window.onload = () => {
+            const overlay = document.querySelector('.overlay');
+            overlay.style.display = 'flex';
+
+            // Asegurarse de que aparezca con transición
+            setTimeout(() => {
+                overlay.style.opacity = '1';
+            }, 10);
+        };
+
+        function abrirModal(imagen) {
+            const modal = document.getElementById('modal');
+            const imagenAmpliada = document.getElementById('imagenAmpliada');
+            imagenAmpliada.src = imagen;
+            modal.style.display = 'flex';
+        }
+
+        function cerrarModal(event) {
+            if (event.target === document.getElementById('modal')) {
+                document.getElementById('modal').style.display = 'none';
+            }
+        }
+
+        function comprarPorWhatsApp(producto, precio) {
+            const mensaje = `¡Hola! Estoy interesado en comprar ${producto} por un valor de $${precio}. ¿Me pueden ayudar?`;
+            const enlace = `https://wa.me/56912345678?text=${encodeURIComponent(mensaje)}`;
+            window.open(enlace, '_blank');
+        }
+
+        
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
