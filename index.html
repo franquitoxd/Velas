@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaddai</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+    <link rel="icon" href="icono.ico">
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="alert-box">
+            <h2>Bienvenid@s</h2>
+            <p>¡Gracias por visitarnos!</p>
+            <p>Esto es Shaddai</p>
+            <button class="close-btn" onclick="closeAlert()">Cerrar</button>
+        </div>
+    </div>
+
+
+    <h1 class="shaddai">Shaddai</h1>
+
+    
+<div class="productos">
+    <div class="producto">
+        <img src="img/producto 1.jpg"
+            onclick="abrirModal('img/producto 1.jpg')">
+        <h3>Producto 1</h3>
+        <p class="precio">$100</p>
+        <button class="btn-comprar" onclick="comprarPorWhatsApp('Producto 1', 100)">Comprar por WhatsApp</button>
+    </div>
+
+    <div class="producto">
+        <img src="img/producto 2.jpg"
+            onclick="abrirModal('img/producto 2.jpg')">
+        <h3>Producto 2</h3>
+        <p class="precio">$150</p>
+        <button class="btn-comprar" onclick="comprarPorWhatsApp('Producto 2', 150)">Comprar por WhatsApp</button>
+    </div>
+
+    <div class="producto">
+        <img src="img/producto 3.jpg"
+            onclick="abrirModal('img/producto 3.jpg')">
+        <h3>Producto 3</h3>
+        <p class="precio">$150</p>
+        <button class="btn-comprar" onclick="comprarPorWhatsApp('Producto 2', 150)">Comprar por WhatsApp</button>
+    </div>
+</div>
+
+
+<div class="productos">
+    <div class="producto">
+        <img src="img/producto 4.jpg"
+            onclick="abrirModal('img/producto 4.jpg')">
+        <h3>Producto 4</h3>
+        <p class="precio">$100</p>
+        <button class="btn-comprar" onclick="comprarPorWhatsApp('Producto 1', 100)">Comprar por WhatsApp</button>
+    </div>
+</div>
+
+    
+
+    <!-- Modal para imagen ampliada -->
+    <div class="modal" id="modal">
+        <span class="close" onclick="cerrarModal()">&times;</span>
+        <img id="imagenAmpliada" src="" alt="Imagen Ampliada">
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
