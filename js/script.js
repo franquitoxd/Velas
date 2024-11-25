@@ -38,7 +38,7 @@ function closeAlert() {
 
         function comprarPorWhatsApp(producto, precio) {
             const mensaje = `¡Hola! Estoy interesado en comprar ${producto} por un valor de $${precio}. ¿Me pueden ayudar?`;
-            const enlace = `https://wa.me/56912345678?text=${encodeURIComponent(mensaje)}`;
+            const enlace = `https://wa.me/541131746665?text=${encodeURIComponent(mensaje)}`;
             window.open(enlace, '_blank');
         }
 
